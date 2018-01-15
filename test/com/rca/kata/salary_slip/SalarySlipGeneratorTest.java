@@ -3,17 +3,17 @@ package com.rca.kata.salary_slip;
 import org.junit.Before;
 import org.junit.Test;
 
-public class SalarySlipTest {
+public class SalarySlipGeneratorTest {
 
-    SalarySlip salarySlip;
+    SalarySlipGenerator salarySlipGenerator;
 
     @Before
     public void setUp() throws Exception {
-        salarySlip = new SalarySlip();
+        salarySlipGenerator = new SalarySlipGenerator();
     }
 
     @Test
     public void tryToExecuteGenerateFor() throws Exception {
-        salarySlip.generateFor();
+        salarySlipGenerator.generateFor();
     }
 }
