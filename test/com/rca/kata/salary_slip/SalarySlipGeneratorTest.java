@@ -17,9 +17,16 @@ public class SalarySlipGeneratorTest {
     }
 
     @Test
-    public void whenAnualSalEqualsTo5000_grossSalEqualsTo416dot67() throws Exception {
+    public void whenAnualSalEqualsTo5000_GrossSalEqualsTo416dot67() throws Exception {
         employee = new Employee(12345,"John J Doe",5000);
         salarySlip = salarySlipGenerator.generateFor(employee);
         assertEquals(416.67,salarySlip.getGrossSalary(),0.01);
+    }
+
+    @Test
+    public void whenAnualSalEqualsTo9060_NationalInsuranceEqualsTo10() throws Exception {
+        employee = new Employee(12345,"John J Doe", 9060);
+        salarySlip = salarySlipGenerator.generateFor(employee);
+        assertEquals(10.00,salarySlip.getNationalInsuranceContributions(), 0.01);
     }
 }
