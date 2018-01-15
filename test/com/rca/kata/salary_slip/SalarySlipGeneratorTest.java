@@ -20,6 +20,6 @@ public class SalarySlipGeneratorTest {
     @Test
     public void whenAnualSalEqualsTo5000_grossSalEqualsTo416dot67() throws Exception {
         salarySlip = salarySlipGenerator.generateFor(employee);
-        assertEquals(416.67,salarySlip.getGrossSalary());
+        assertEquals(416.67,salarySlip.getGrossSalary(),0.01);
     }
 }
