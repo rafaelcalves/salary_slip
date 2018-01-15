@@ -8,7 +8,7 @@ public class SalarySlip {
     public SalarySlip(Employee employee, double grossSalary) {
         this.employee = employee;
         this.grossSalary = grossSalary;
-        this.nationalInsuranceContributions = 0;
+        calculateNationalInsuranceContributions();
     }
 
     public double getGrossSalary() {
@@ -17,5 +17,11 @@ public class SalarySlip {
 
     public double getNationalInsuranceContributions() {
         return nationalInsuranceContributions;
+    }
+
+    private void calculateNationalInsuranceContributions(){
+        if(employee.getAnnualGrossSalary() > 8060){
+            nationalInsuranceContributions = (employee.getAnnualGrossSalary() - 8060)/12*.12;
+        }
     }
 }
