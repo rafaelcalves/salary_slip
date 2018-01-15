@@ -10,4 +10,8 @@ public class Employee {
         this.name = name;
         this.anualGrossSalary = anualGrossSalary;
     }
+
+    public double getAnualGrossSalary() {
+        return anualGrossSalary;
+    }
 }
