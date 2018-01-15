@@ -14,11 +14,11 @@ public class SalarySlipGeneratorTest {
     @Before
     public void setUp() throws Exception {
         salarySlipGenerator = new SalarySlipGenerator();
-        employee = new Employee(12345,"John J Doe",5000);
     }
 
     @Test
     public void whenAnualSalEqualsTo5000_grossSalEqualsTo416dot67() throws Exception {
+        employee = new Employee(12345,"John J Doe",5000);
         salarySlip = salarySlipGenerator.generateFor(employee);
         assertEquals(416.67,salarySlip.getGrossSalary(),0.01);
     }
