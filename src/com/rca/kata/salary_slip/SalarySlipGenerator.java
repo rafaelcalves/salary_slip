@@ -1,4 +1,5 @@
 package com.rca.kata.salary_slip;
 
-public class SalarySlip {
+public class SalarySlipGenerator {
+    public SalarySlip generateFor(Employee employee);
 }
