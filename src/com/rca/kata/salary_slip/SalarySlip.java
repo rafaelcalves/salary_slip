@@ -22,6 +22,8 @@ public class SalarySlip {
     private void calculateNationalInsuranceContributions(){
         if(employee.getAnnualGrossSalary() > 8060){
             nationalInsuranceContributions = (employee.getAnnualGrossSalary() - 8060)/12*.12;
+        } else {
+            nationalInsuranceContributions = 0;
         }
     }
 }
