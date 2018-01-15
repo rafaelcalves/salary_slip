@@ -3,15 +3,15 @@ package com.rca.kata.salary_slip;
 public class Employee {
     private int id;
     private String name;
-    private double anualGrossSalary;
+    private double annualGrossSalary;
 
-    public Employee(int id, String name, double anualGrossSalary) {
+    public Employee(int id, String name, double annualGrossSalary) {
         this.id = id;
         this.name = name;
-        this.anualGrossSalary = anualGrossSalary;
+        this.annualGrossSalary = annualGrossSalary;
     }
 
-    public double getAnualGrossSalary() {
-        return anualGrossSalary;
+    public double getAnnualGrossSalary() {
+        return annualGrossSalary;
     }
 }

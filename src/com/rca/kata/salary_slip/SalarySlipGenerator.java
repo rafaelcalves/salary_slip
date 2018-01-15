@@ -2,6 +2,7 @@ package com.rca.kata.salary_slip;
 
 public class SalarySlipGenerator {
     public SalarySlip generateFor(Employee employee){
-        return null;
+        double grossSalary = employee.getAnnualGrossSalary()/12;
+        return new SalarySlip(employee,grossSalary);
     }
 }
