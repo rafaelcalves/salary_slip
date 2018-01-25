@@ -29,7 +29,18 @@ public class SalarySlipGeneratorTest {
     }
 
     @Test
-    public void whenAnnualSalBiggerThan12000_TaxPayableEquals16dot67or20percentMonthly() throws Exception{
+    public void whenAnnualSalBiggerThan12000_TaxFreeAllowanceEqualsTo916dot67() throws Exception{
+        setEmployee(12345,"John J Doe", 12000);
+        assertEquals(916.67,salarySlip.getTaxFreeAllowance(),.01);
+    }
+
+    @Test
+    public void whenAnnualSalBiggerThan12000_TaxableIncomeEqualsTo83dot33() throws Exception{
+        setEmployee(12345,"John J Doe", 12000);
+        assertEquals(83.33,salarySlip.getTaxableIncome(),.01);
+    }
+    @Test
+    public void whenAnnualSalBiggerThan12000_TaxPayableEqualsTo16dot67() throws Exception{
         setEmployee(12345,"John J Doe", 12000);
         assertEquals(16.67,salarySlip.getTaxPayable(),.01);
     }

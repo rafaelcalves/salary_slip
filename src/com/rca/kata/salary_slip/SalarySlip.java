@@ -28,4 +28,12 @@ public class SalarySlip {
     public double getTaxPayable() {
         return taxPayable;
     }
+
+    public double getTaxFreeAllowance() {
+        return taxFreeAllowance;
+    }
+
+    public double getTaxableIncome() {
+        return taxableIncome;
+    }
 }
