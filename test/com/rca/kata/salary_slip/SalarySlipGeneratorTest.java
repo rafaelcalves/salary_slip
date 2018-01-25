@@ -17,16 +17,25 @@ public class SalarySlipGeneratorTest {
     }
 
     @Test
-    public void whenAnualSalEqualsTo5000_GrossSalEqualsTo416dot67() throws Exception {
-        employee = new Employee(12345,"John J Doe",5000);
-        salarySlip = salarySlipGenerator.generateFor(employee);
-        assertEquals(416.67,salarySlip.getGrossSalary(),0.01);
+    public void whenAnnualSalEqualsTo5000_GrossSalEqualsTo416dot67() throws Exception {
+        setEmployee(12345,"John J Doe",5000);
+        assertEquals(416.67,salarySlip.getGrossSalary(),.01);
     }
 
     @Test
-    public void whenAnualSalEqualsTo9060_NationalInsuranceEqualsTo10() throws Exception {
-        employee = new Employee(12345,"John J Doe", 9060);
+    public void whenAnnualSalEqualsTo9060_NationalInsuranceEqualsTo10() throws Exception {
+        setEmployee(12345,"John J Doe", 9060);
+        assertEquals(10.00,salarySlip.getNationalInsuranceContributions(), .01);
+    }
+
+    @Test
+    public void whenAnnualSalBiggerThan12000_TaxPayableEquals16dot67or20percentMonthly() throws Exception{
+        setEmployee(12345,"John J Doe", 12000);
+        assertEquals(16.67,salarySlip.getTaxPayable(),.01);
+    }
+
+    private void setEmployee(int id, String name, double annualGrossSalary){
+        employee = new Employee(id,name,annualGrossSalary);
         salarySlip = salarySlipGenerator.generateFor(employee);
-        assertEquals(10.00,salarySlip.getNationalInsuranceContributions(), 0.01);
     }
 }
